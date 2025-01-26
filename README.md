@@ -1,2 +1,12 @@
 # Morpion
-Ce script gère un jeu de morpion (tic-tac-toe) avec des fonctionnalités avancées telles que la reconnaissance vocale pour placer les pions, la personnalisation de la taille de la grille et de la couleur de fond, ainsi que la réinitialisation du jeu. Il inclut des alertes pour guider les joueurs et demande la permission d'utiliser le microphone pour le mode vocal. Le script initialise les éléments de l'interface utilisateur, gère les événements de clic pour les boutons de contrôle, et met à jour l'état du jeu en fonction des actions des joueurs. La reconnaissance vocale permet aux joueurs de placer leurs pions en énonçant le numéro de la cellule souhaitée.
+Notre jeu de morpion offre plusieurs fonctionnalités avancées et personnalisables qui le distinguent des autres versions disponibles :
+
+1. **Reconnaissance vocale** : Permet aux joueurs de placer leurs pions en utilisant des commandes vocales, rendant le jeu plus interactif et accessible.
+2. **Personnalisation de la grille** : Les joueurs peuvent ajuster la taille de la grille selon leurs préférences, offrant une flexibilité et une variété de gameplay.
+3. **Personnalisation de l'apparence** : Les joueurs peuvent changer la couleur de fond du jeu, permettant une expérience visuelle personnalisée.
+4. **Interface utilisateur intuitive** : Des boutons clairs pour agrandir, réduire et réinitialiser la grille, ainsi que des alertes pour guider les joueurs tout au long du jeu.
+5. **Gestion du temps** : Intègre un minuteur configurable pour ajouter une dimension de défi supplémentaire.
+6. **Accessibilité** : Conçu pour être utilisé facilement par tous les joueurs, y compris ceux qui préfèrent les commandes vocales.
+
+Ces fonctionnalités combinées offrent une expérience de jeu unique, interactive et personnalisable, rendant notre version du morpion plus attrayante et amusante à jouer.
+
