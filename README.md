@@ -1,5 +1,5 @@
 # Morpion
-Notre jeu de morpion offre plusieurs fonctionnalités avancées et personnalisables qui le distinguent des autres versions disponibles :
+Notre jeu de morpion avec https://github.com/Ihsanebar offre plusieurs fonctionnalités avancées et personnalisables qui le distinguent des autres versions disponibles :
 
 1. **Reconnaissance vocale** : Permet aux joueurs de placer leurs pions en utilisant des commandes vocales, rendant le jeu plus interactif et accessible.
 2. **Personnalisation de la grille** : Les joueurs peuvent ajuster la taille de la grille selon leurs préférences, offrant une flexibilité et une variété de gameplay.
