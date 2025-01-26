@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morpion - Version Améliorée</title>
+    <link href="https://fonts.googleapis.com/css?family=Crete+Round" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Page d'Accueil -->
+    <div id="accueil">
+        <h1>Bienvenue dans le jeu du Morpion</h1>
+        <button id="start-game-btn">Commencer à jouer</button>
+    </div>
+
+    <!-- Sélections du jeu -->
+    <div id="game">
+        <label for="symbol">Choisissez vos symboles :</label>
+        <select id="symbol">
+            <option value="X">X</option>
+            <option value="O">O</option>
+            <option value="🪐">🪐 (Planète)</option>
+            <option value="🚀">🚀 (Fusée)</option>
+            <option value="🌸">🌸 (Fleur de cerisier)</option>
+            <option value="💮">💮 (Fleur blanche)</option>
+        </select>
+
+        <label for="mode">Mode de jeu :</label>
+        <select id="mode">
+            <option value="2p">Deux joueurs</option>
+            <option value="ai-easy">IA Facile</option>
+            <option value="ai-medium">IA Modéré</option>
+            <option value="ai-hard">IA Difficile</option>
+        </select>
+
+        <label for="themes">Choisissez un thème :</label>
+        <select id="themes">
+            <option value="defaut" selected>Par défaut</option>
+            <option value="espace">L'espace</option>
+            <option value="mer">La mer</option>
+            <option value="foret">La forêt</option>
+            <option value="fleurs">Les fleurs</option>
+        </select>
+
+        <label for="grid-size">Choisir la taille de la grille :</label>
+        <select id="grid-size">
+            <option value="3">3x3</option>
+            <option value="4">4x4</option>
+            <option value="5">5x5</option>
+        </select>
+
+        <label for="timer">Choisir le temps (en minutes) :</label>
+        <select id="timer">
+            <option value="1">1 minute</option>
+            <option value="2">2 minutes</option>
+            <option value="3">3 minutes</option>
+            <option value="5">5 minutes</option>
+        </select>
+
+        <label for="voice-mode">Activer le mode vocal :</label>
+        <input type="checkbox" id="voice-mode">
+
+        <label for="background-color">Choisir la couleur de fond :</label>
+        <input type="color" id="background-color" name="background-color" value="#2c3e50">
+
+        <p>En mode vocal, vous pouvez dire le numéro de la cellule (de 1 à 9) ou son nom (un, deux, trois, etc.) pour placer votre pion.</p>
+
+        <video id="background-video" autoplay loop muted hidden>
+            <source src="" type="video/mp4">
+        </video>
+
+        <button id="reset-btn">Réinitialiser</button>
+        <button id="expand-grid-btn">Agrandir la grille</button>
+        <button id="shrink-grid-btn" style="display: none;">Réduire la grille</button>
+    </div>
+
+    <!-- Tableau de score -->
+    <div id="scoreboard" class="scoreboard"></div>
+
+    <!-- Plateau du jeu -->
+    <div class="board" id="board"></div>
+
+    <!-- Statut du jeu -->
+    <p id="status"></p>
+
+    <script src="script.js"></script>
+</body>
+</html>

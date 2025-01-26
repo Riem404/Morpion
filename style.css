@@ -1,0 +1,199 @@
+body {
+    font-family: 'Crete Round', Arial, sans-serif;
+    text-align: center;
+    background-color: #2c3e50;
+    color: #f8f8fa;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+#acceuil {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#acceuil h1 {
+    font-size: 2.5em;
+    color: #ecf0f1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#start-game-btn {
+    padding: 15px 30px;
+    font-size: 1.5em;
+    cursor: pointer;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#start-game-btn:hover {
+    background-color: #2980b9;
+    transform: scale(1.1);
+}
+
+/* Style pour la page du jeu */
+#game {
+    text-align: center;
+    display: none;
+    margin-top: 20px;
+}
+
+#game.show {
+    display: block;  /* la page du jeu est visible une fois commencée */
+}
+
+#game select, #game button {
+    padding: 10px;
+    font-size: 16px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #34495e;
+    color: #faf7f7;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#game select:hover, #game button:hover {
+    background-color: #2c3e50;
+    transform: scale(1.05);
+}
+
+#game select {
+    width: 200px;
+}
+
+.cell {
+    aspect-ratio: 1; /* Assure que les cellules sont carrées */
+    width: 100%; /* La largeur est gérée par la grille */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #95a5a6;
+    font-size: calc(36px / var(--grid-size, 3)); /* Police réduite selon la taille */
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
+    border-radius: 5px;
+}
+
+.cell:hover {
+    transform: scale(1.1);
+}
+
+.cell.taken {
+    pointer-events: none;
+    background-color: #7f8c8d;  /* Assure que la cellule prise ait une couleur différente */
+}
+
+/* Style pour la vidéo d'arrière-plan */
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* La vidéo sera derrière le contenu */
+    display: none;
+}
+
+#background-video.show {
+    display: block; /* Affiche la vidéo quand un thème est sélectionné */
+}
+
+#board {
+    display: none;
+    gap: 5px; /* Espacement entre les cellules */
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    max-width: 90vw; /* Largeur max de la grille */
+    max-height: 90vh; /* Hauteur max de la grille */
+    border: 2px solid #ecf0f1; 
+    padding: 10px;
+    background-color: #34495e;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    /* Colonnes et rangées dynamiques */
+    grid-template-columns: repeat(var(--grid-size, 3), 1fr);
+    grid-template-rows: repeat(var(--grid-size, 3), 1fr);
+}
+
+.cell {
+    display: flex; /* Alignement du contenu à l'intérieur de chaque cellule */
+    justify-content: center; /* Centrage horizontal du texte */
+    align-items: center; /* Centrage vertical du texte */
+    width: 100%; /* Largeur des cellules */
+    height: 100%; /* Hauteur des cellules */
+    border: 1px solid #ecf0f1; /* Bordure des cellules */
+    font-size: calc(24px + 2vmin); /* Taille de la police */
+    cursor: pointer; /* Indicateur de clic */
+    background-color: #f0f0f0; /* Couleur d'arrière-plan */
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s; /* Transitions pour les animations */
+}
+
+.cell.number {
+    color: #e74c3c; /* Couleur rouge pour les chiffres en mode vocal */
+}
+
+.cell:hover {
+    transform: scale(1.1); /* Agrandissement au survol */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Ombre portée au survol */
+}
+
+.cell.taken {
+    pointer-events: none;
+    background-color: #7f8c8d;  /* Assure que la cellule prise ait une couleur différente */
+}
+
+#reset-btn {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    background-color: #e74c3c; /* Couleur de fond rouge */
+    color: #fff; /* Couleur du texte blanche */
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px; /* Espacement au-dessus du bouton */
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#reset-btn:hover {
+    background-color: #c0392b; /* Couleur de fond rouge foncé au survol */
+    transform: scale(1.1);
+}
+
+#status {
+    font-size: 1.5em;
+    margin-top: 20px;
+    color: #e74c3c; /* Couleur rouge pour attirer l'attention */
+}
+
+#timer {
+    font-size: 1em;
+    margin: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .board {
+        grid-template-columns: repeat(3, 80px);
+        grid-template-rows: repeat(3, 80px);
+    }
+
+    #game {
+        margin-top: 10px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+}
